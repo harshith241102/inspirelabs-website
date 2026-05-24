@@ -1,0 +1,8 @@
+.DS_Store
+DESIGN_DECISIONS.md
+*.swp
+*.swo
+*~
+.env
+.env.*
+Thumbs.db

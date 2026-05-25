@@ -3631,8 +3631,9 @@ a.portfolio-card:hover .portfolio-arrow {
 }
 
 .footer-logo {
-  height: 40px;
-  width: auto;
+  height: auto;
+  max-height: 40px;
+  max-width: 100%;
   margin-bottom: var(--sp-6);
   opacity: 0.9;
 }

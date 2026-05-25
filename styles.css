@@ -9111,8 +9111,8 @@ a.portfolio-card:hover .portfolio-arrow {
 
 .pr-platform-logo {
   width: auto;
-  height: 44px;
-  max-width: 160px;
+  height: 36px;
+  max-width: 180px;
   object-fit: contain;
   flex-shrink: 0;
   transition: transform 0.3s ease;

@@ -9118,6 +9118,13 @@ a.portfolio-card:hover .portfolio-arrow {
   transition: transform 0.3s ease;
 }
 
+/* GrabCash wordmark fills 100% of its viewBox (no tagline), so it
+   appears oversized next to GrabOn (which includes a tagline).
+   Reduce to match visual weight of sibling logos. */
+.pr-platform-logo[alt="GrabCash"] {
+  height: 26px;
+}
+
 .pr-platform-name {
   display: none;
 }

@@ -3179,13 +3179,13 @@ a.portfolio-card:hover .portfolio-arrow {
   position: relative;
 }
 
-/* Single continuous dashed line spanning the full spine width */
+/* Dashed line connecting framework columns (after INPUT, before OUTPUT) */
 .bp-spine::before {
   content: '';
   position: absolute;
   top: 67px; /* 48px padding-top + 13px dot margin + 6px dot center */
-  left: 0;
-  right: 0;
+  left: 140px;   /* 40px padding + 100px INPUT column */
+  right: 140px;  /* 40px padding + 100px OUTPUT column */
   height: 1px;
   z-index: 0;
   background: repeating-linear-gradient(

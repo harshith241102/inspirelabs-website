@@ -416,7 +416,7 @@
           <div class="plat-card-header">
             <div class="plat-card-left">
               <svg class="plat-cell" width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--orange)"/></svg>
-              <span class="plat-tag plat-tag--orange">Shipping now</span>
+              <span class="plat-tag plat-tag--orange">Affiliate Earnings</span>
             </div>
           </div>
           <img src="logos/platforms/grabcash-logo.svg" alt="GrabCash" class="plat-logo">
@@ -508,7 +508,7 @@
           <div class="plat-card-header">
             <div class="plat-card-left">
               <svg class="plat-cell" width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--ink)"/></svg>
-              <span class="plat-tag">Alternatives.co</span>
+              <span class="plat-tag">B2B Discovery</span>
             </div>
           </div>
           <img src="logos/platforms/alternatives-logo.png" alt="Alternatives.co" class="plat-logo">
@@ -1024,5 +1024,28 @@
     </div>
   </footer>
 
+<script>
+  // Scroll-triggered reveal for animated sections
+  (function() {
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll('.bp-spine, .pillars, .pillars-foundation');
+
+    if (reducedMotion) {
+      targets.forEach(function(el) { el.classList.add('in-view'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    targets.forEach(function(el) { observer.observe(el); });
+  })();
+</script>
 </body>
 </html>

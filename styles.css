@@ -6302,36 +6302,35 @@ a.portfolio-card:hover .portfolio-arrow {
 
 /* ---- AI Operations: Platform showcase cards (Section 6) ---- */
 .aio-platform-showcase {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-8);
+  display: flex;
 }
 
 .aio-platform-card {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  border: 1px solid var(--grey-100);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
 .aio-platform-card:hover {
-  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(14, 15, 10, 0.06);
 }
 
 .aio-platform-logo-area {
   background: var(--grey-50);
-  border: 1px solid var(--grey-100);
-  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--sp-12) var(--sp-10);
-  min-height: 200px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 220px;
 }
 
 .aio-platform-card:hover .aio-platform-logo-area {
-  border-color: var(--grey-200);
-  box-shadow: 0 4px 16px rgba(14, 15, 10, 0.05);
+  background: var(--grey-100);
 }
 
 .aio-platform-logo {
@@ -6343,7 +6342,10 @@ a.portfolio-card:hover .portfolio-arrow {
 }
 
 .aio-platform-info {
-  padding: var(--sp-6) var(--sp-2) 0;
+  padding: var(--sp-10) var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .aio-platform-info h3 {
@@ -6358,6 +6360,10 @@ a.portfolio-card:hover .portfolio-arrow {
   color: var(--soft-grey);
   font-size: 0.9375rem;
   line-height: 1.65;
+}
+
+.aio-platform-info .plat-visit {
+  margin-top: var(--sp-5);
 }
 
 /* ---- AI Operations: Governance grid (Section 5) ---- */
@@ -7703,9 +7709,8 @@ a.portfolio-card:hover .portfolio-arrow {
     gap: var(--sp-4);
   }
 
-  .aio-platform-showcase {
+  .aio-platform-card {
     grid-template-columns: 1fr;
-    max-width: 480px;
   }
 
   .property-pills {

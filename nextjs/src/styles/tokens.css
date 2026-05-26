@@ -1,0 +1,51 @@
+/* ============================================
+   Inspirelabs Design Tokens
+   Source: Brand Guidelines v2 + Build Document
+   ============================================ */
+
+:root {
+  /* --- Colors --- */
+  --ink: #0E0F0A;
+  --paper: #FFFFFF;
+  --grey-50: #F6F7F9;
+  --grey-100: #EEF0F3;
+  --grey-200: #DDE2EA;
+  --orange: #FF7A45;
+  --soft-grey: #6F7583;
+  --warm-tint: #FAF7F1;
+
+  /* --- Typography --- */
+  --font-display: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-lato), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* --- Spacing (4px base) --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* --- Layout --- */
+  --container-max: 1320px;
+  --gutter-desktop: 24px;
+  --gutter-tablet: 20px;
+  --gutter-mobile: 16px;
+
+  /* --- Radii --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* --- Tap target --- */
+  --tap-min: 44px;
+}

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ============================================
+   Inspirelabs Global Styles
+   Tailwind v4 CSS-first configuration
+   ============================================ */
+
+@theme {
+  /* Colors */
+  --color-ink: #0E0F0A;
+  --color-paper: #FFFFFF;
+  --color-grey-50: #F6F7F9;
+  --color-grey-100: #EEF0F3;
+  --color-grey-200: #DDE2EA;
+  --color-orange: #FF7A45;
+  --color-soft-grey: #6F7583;
+  --color-warm-tint: #FAF7F1;
+
+  /* Font families (resolved by next/font CSS variables) */
+  --font-display: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-lato), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+/* Base resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 122, 69, 0.15);
+  color: var(--color-ink);
+}

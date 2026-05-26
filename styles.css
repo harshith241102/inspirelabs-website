@@ -3273,7 +3273,7 @@ a.portfolio-card:hover .portfolio-arrow {
   left: 0;
   right: 0;
   height: 1px;
-  z-index: 1;
+  z-index: 0;
   background: repeating-linear-gradient(
     to right,
     rgba(255,255,255,0.12) 0px,
@@ -3294,7 +3294,7 @@ a.portfolio-card:hover .portfolio-arrow {
   background: rgba(255,122,69,0.4);
 }
 
-/* Dot */
+/* Dot — solid ink ring masks the dashed line passing through */
 .bp-spine-dot {
   width: 12px;
   height: 12px;
@@ -3302,21 +3302,24 @@ a.portfolio-card:hover .portfolio-arrow {
   background: rgba(255,255,255,0.15);
   flex-shrink: 0;
   position: relative;
-  z-index: 2;
+  z-index: 5;
   margin-top: 13px;
+  box-shadow: 0 0 0 5px #0E0F0A;
 }
 
 .bp-spine-dot--active {
   background: var(--orange);
-  box-shadow: 0 0 0 5px rgba(255,122,69,0.15);
+  box-shadow: 0 0 0 5px #0E0F0A, 0 0 0 10px rgba(255,122,69,0.15);
 }
 
-/* Stem connecting dot to card */
+/* Stem connecting dot to card — above dashed lines, below dot */
 .bp-spine-stem {
   width: 2px;
   height: 28px;
   background: rgba(255,255,255,0.08);
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .bp-spine-col--1 .bp-spine-stem {
@@ -3677,12 +3680,13 @@ a.portfolio-card:hover .portfolio-arrow {
   animation: spine-dot-pulse 2.5s ease-in-out infinite;
 }
 @keyframes spine-dot-pulse {
-  0%, 100% { box-shadow: 0 0 0 5px rgba(255,122,69,0.15); }
-  50%      { box-shadow: 0 0 0 10px rgba(255,122,69,0.08), 0 0 16px rgba(255,122,69,0.2); }
+  0%, 100% { box-shadow: 0 0 0 5px #0E0F0A, 0 0 0 10px rgba(255,122,69,0.15); }
+  50%      { box-shadow: 0 0 0 5px #0E0F0A, 0 0 0 14px rgba(255,122,69,0.08), 0 0 20px rgba(255,122,69,0.2); }
 }
 
-/* Section 3: Dashed connecting lines flow left-to-right */
+/* Section 3: Dashed connecting lines flow left-to-right — keep behind dots */
 .bp-spine.in-view .bp-spine-col::before {
+  z-index: 0;
   background: repeating-linear-gradient(
     to right,
     rgba(255,122,69,0.4) 0px,

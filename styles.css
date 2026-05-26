@@ -3293,24 +3293,25 @@ a.portfolio-card:hover .portfolio-arrow {
 
 /* Dot — sits above the continuous dashed line */
 .bp-spine-dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
+  border: 1.5px solid rgba(255,255,255,0.12);
   flex-shrink: 0;
   position: relative;
   z-index: 2;
-  margin-top: 13px;
+  margin-top: 12px;
 }
 
 /* Ink-colored circle behind each dot masks the dashed line */
 .bp-spine-dot::before {
   content: '';
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
   background: var(--ink);
   border-radius: 50%;
   z-index: -1;
@@ -3318,6 +3319,7 @@ a.portfolio-card:hover .portfolio-arrow {
 
 .bp-spine-dot--active {
   background: var(--orange);
+  border-color: rgba(255,122,69,0.3);
   box-shadow: 0 0 0 5px rgba(255,122,69,0.15);
 }
 

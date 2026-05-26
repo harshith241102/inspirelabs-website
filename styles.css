@@ -3291,35 +3291,20 @@ a.portfolio-card:hover .portfolio-arrow {
 
 /* Per-column lines removed — single continuous line is on .bp-spine::before */
 
-/* Dot — sits above the continuous dashed line */
+/* Dot — opaque background naturally covers the 1px dashed line */
 .bp-spine-dot {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  border: 1.5px solid rgba(255,255,255,0.12);
+  background: #9A9A9A;
   flex-shrink: 0;
   position: relative;
   z-index: 2;
-  margin-top: 12px;
-}
-
-/* Ink-colored circle behind each dot masks the dashed line */
-.bp-spine-dot::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  background: var(--ink);
-  border-radius: 50%;
-  z-index: -1;
+  margin-top: 11px;
 }
 
 .bp-spine-dot--active {
   background: var(--orange);
-  border-color: rgba(255,122,69,0.3);
   box-shadow: 0 0 0 5px rgba(255,122,69,0.15);
 }
 

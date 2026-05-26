@@ -3265,7 +3265,7 @@ a.portfolio-card:hover .portfolio-arrow {
 .bp-spine-col--3 { grid-column: 4; grid-row: 1 / 4; }
 .bp-spine-col--4 { grid-column: 5; grid-row: 1 / 4; }
 
-/* Horizontal line running through all dots */
+/* Horizontal line running through all dots — behind nodes */
 .bp-spine-col::before {
   content: '';
   position: absolute;
@@ -3273,6 +3273,7 @@ a.portfolio-card:hover .portfolio-arrow {
   left: 0;
   right: 0;
   height: 1px;
+  z-index: 1;
   background: repeating-linear-gradient(
     to right,
     rgba(255,255,255,0.12) 0px,
@@ -3330,11 +3331,39 @@ a.portfolio-card:hover .portfolio-arrow {
   padding: var(--sp-5) var(--sp-5);
   width: 100%;
   border-top: 2px solid rgba(255,255,255,0.06);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bp-spine-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 0 20px rgba(255,255,255,0.04), inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.bp-spine-card:hover h3 {
+  color: var(--orange);
+  transition: color 0.3s ease;
+}
+
+.bp-spine-card:hover .bp-verb {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s ease;
+}
+
+.bp-spine-card:hover p {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s ease;
 }
 
 .bp-spine-card.bp-n1 {
   border-color: rgba(255,122,69,0.3);
   border-top-color: rgba(255,122,69,0.5);
+}
+
+.bp-spine-card.bp-n1:hover {
+  background: rgba(255,122,69,0.06);
+  border-color: rgba(255,122,69,0.45);
+  box-shadow: 0 0 24px rgba(255,122,69,0.1);
 }
 
 .bp-spine-card .bp-verb {
@@ -3600,6 +3629,160 @@ a.portfolio-card:hover .portfolio-arrow {
   color: var(--orange);
   text-transform: uppercase;
   letter-spacing: 0.15em;
+}
+
+/* --- Scroll-triggered animations for Sections 3 & 5 --- */
+
+/* Section 3: System spine — columns stagger in */
+.bp-spine .bp-spine-in,
+.bp-spine .bp-spine-out,
+.bp-spine .bp-spine-col {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.bp-spine.in-view .bp-spine-in   { opacity: 1; transform: none; transition-delay: 0s; }
+.bp-spine.in-view .bp-spine-col--1 { opacity: 1; transform: none; transition-delay: 0.12s; }
+.bp-spine.in-view .bp-spine-col--2 { opacity: 1; transform: none; transition-delay: 0.24s; }
+.bp-spine.in-view .bp-spine-col--3 { opacity: 1; transform: none; transition-delay: 0.36s; }
+.bp-spine.in-view .bp-spine-col--4 { opacity: 1; transform: none; transition-delay: 0.48s; }
+.bp-spine.in-view .bp-spine-out  { opacity: 1; transform: none; transition-delay: 0.6s; }
+
+/* Section 5: Pillars rise up with stagger */
+.pillars .pillar {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.5s ease, transform 0.5s ease, background 0.4s ease;
+}
+.pillars.in-view .pillar:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+.pillars.in-view .pillar:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
+.pillars.in-view .pillar:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.24s; }
+.pillars.in-view .pillar:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.36s; }
+
+/* Section 5: Foundation bar fades in after pillars */
+.pillars-foundation {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+}
+.pillars-foundation.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Continuous animations (run after in-view) --- */
+
+/* Section 3: Active dot pulses */
+.bp-spine.in-view .bp-spine-dot--active {
+  animation: spine-dot-pulse 2.5s ease-in-out infinite;
+}
+@keyframes spine-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(255,122,69,0.15); }
+  50%      { box-shadow: 0 0 0 10px rgba(255,122,69,0.08), 0 0 16px rgba(255,122,69,0.2); }
+}
+
+/* Section 3: Dashed connecting lines flow left-to-right */
+.bp-spine.in-view .bp-spine-col::before {
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255,122,69,0.4) 0px,
+    rgba(255,122,69,0.4) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  background-size: 12px 1px;
+  animation: spine-dash-flow 0.8s linear infinite;
+}
+@keyframes spine-dash-flow {
+  0%   { background-position: 0 0; }
+  100% { background-position: 12px 0; }
+}
+
+/* Section 3: Active stem glows subtly */
+.bp-spine.in-view .bp-spine-col--1 .bp-spine-stem {
+  animation: spine-stem-glow 3s ease-in-out infinite;
+}
+@keyframes spine-stem-glow {
+  0%, 100% { background: rgba(255,122,69,0.3); }
+  50%      { background: rgba(255,122,69,0.55); }
+}
+
+/* Section 3: Output node pulses to show signal arriving */
+.bp-spine.in-view .bp-spine-out {
+  animation: spine-output-pulse 4s ease-in-out infinite;
+}
+@keyframes spine-output-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.7; }
+}
+
+/* Section 5: Pillar arrows glow sequentially (flow effect) */
+.pillars.in-view .pillar:nth-child(1)::after {
+  animation: pillar-arrow-glow 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.pillars.in-view .pillar:nth-child(2)::after {
+  animation: pillar-arrow-glow 3s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+.pillars.in-view .pillar:nth-child(3)::after {
+  animation: pillar-arrow-glow 3s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+@keyframes pillar-arrow-glow {
+  0%, 30%, 100% { filter: drop-shadow(0 0 3px rgba(255,122,69,0.2)); opacity: 0.5; transform: translateY(-50%) scale(1); }
+  15%           { filter: drop-shadow(0 0 10px rgba(255,122,69,0.8)); opacity: 1; transform: translateY(-50%) scale(1.15); }
+}
+
+/* Section 5: Top accent bars shimmer across pillars */
+.pillars.in-view .pillar-accent {
+  overflow: hidden;
+}
+.pillars.in-view .pillar-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: pillar-accent-shimmer 4s ease-in-out infinite;
+}
+@keyframes pillar-accent-shimmer {
+  0%   { left: -100%; }
+  50%  { left: 200%; }
+  100% { left: 200%; }
+}
+
+/* Section 5: Foundation bar subtle glow */
+.pillars-foundation.in-view {
+  animation: foundation-glow 3s ease-in-out infinite;
+}
+@keyframes foundation-glow {
+  0%, 100% { border-top-color: var(--orange); }
+  50%      { border-top-color: rgba(255,122,69,0.6); box-shadow: 0 -2px 12px rgba(255,122,69,0.1); }
+}
+
+/* Reduced motion: show everything instantly, no continuous animations */
+@media (prefers-reduced-motion: reduce) {
+  .bp-spine .bp-spine-in,
+  .bp-spine .bp-spine-out,
+  .bp-spine .bp-spine-col,
+  .pillars .pillar,
+  .pillars-foundation {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  .bp-spine-dot--active,
+  .bp-spine-col::before,
+  .bp-spine-col--1 .bp-spine-stem,
+  .pillar::after,
+  .pillar-accent::after,
+  .pillars-foundation {
+    animation: none !important;
+  }
 }
 
 /* ============================================

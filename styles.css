@@ -2427,6 +2427,7 @@ a.portfolio-card:hover .portfolio-arrow {
 
 /* Next bet card */
 .plat-card--next {
+  grid-column: 1 / -1;
   border: 2px dashed var(--soft-grey);
   background: var(--warm-tint);
 }

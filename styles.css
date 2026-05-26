@@ -4914,7 +4914,7 @@ a.portfolio-card:hover .portfolio-arrow {
 
 .cc-reel-strip img {
   width: 180px;
-  height: 135px;
+  height: 180px;
   object-fit: cover;
   display: block;
   border-radius: 4px;
@@ -4964,7 +4964,7 @@ a.portfolio-card:hover .portfolio-arrow {
 /* Reduced motion - show static grid instead */
 @media (prefers-reduced-motion: reduce) {
   .cc-reel-strip { animation: none !important; }
-  .cc-reel-strip img { width: 160px; height: 120px; }
+  .cc-reel-strip img { width: 160px; height: 160px; }
 }
 
 /* ============================================

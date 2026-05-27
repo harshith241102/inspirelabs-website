@@ -345,46 +345,84 @@
       <div style="margin-top: var(--sp-10);">
         <a href="growth-engine.html" class="btn btn-ghost btn-arrow">Explore the Growth Engine</a>
       </div>
-      <div style="margin-top: var(--sp-16);">
-        <p class="eyebrow">Behind every stage</p>
-        <h3 style="margin-bottom: var(--sp-6);">AI handles the repeatable work. Operators govern the rest.</h3>
-      </div>
-      <div class="workflow-grid">
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Market intelligence</h3>
+      <!-- ── AI Layer — Split Panel ── -->
+      <div class="ai-layer">
+        <div class="ai-layer-narrative">
+          <p class="eyebrow" style="color: var(--orange);">● The AI layer</p>
+          <h2 class="ai-layer-headline">Agents that ship the <span style="color: var(--orange);">work</span>, not just the chat.</h2>
+          <p class="ai-layer-body">Our agents read the market, write the content, plan the campaign, attribute the revenue, and clear the rewards. Every surface in the portfolio sits on top of a loop that runs itself. Humans stay in the loop where judgment matters.</p>
+          <a href="ai-operations.html" class="btn btn-ghost btn-arrow" style="color: var(--paper); border-color: rgba(255,255,255,0.2);">See where they run</a>
         </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Search intelligence</h3>
-        </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Content workflows</h3>
-        </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Commerce operations</h3>
-        </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Creator workflows</h3>
-        </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Reporting</h3>
-        </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Optimization loops</h3>
-        </div>
-        <div class="workflow-item">
-          <span class="workflow-dot"></span>
-          <h3>Workflow automation</h3>
+        <div class="ai-layer-loop">
+          <p class="ai-loop-eyebrow">The loop · Runs continuously</p>
+          <div class="ai-loop-grid">
+            <div class="ai-loop-card">
+              <div class="ai-loop-card-header"><span class="ai-loop-num">01</span><span class="ai-loop-label">Research</span></div>
+              <h3>Read the market.</h3>
+              <p>Agents scan demand, search intent, merchant inventory, and competitor surfaces every hour.</p>
+            </div>
+            <div class="ai-loop-card">
+              <div class="ai-loop-card-header"><span class="ai-loop-num">02</span><span class="ai-loop-label">Decide</span></div>
+              <h3>Pick the move.</h3>
+              <p>Models score the next best action per surface, ranked by yield and confidence.</p>
+            </div>
+            <div class="ai-loop-card">
+              <div class="ai-loop-card-header"><span class="ai-loop-num">03</span><span class="ai-loop-label">Execute</span></div>
+              <h3>Ship the work.</h3>
+              <p>Content gets written, campaigns get planned, rewards get cleared, attribution gets matched.</p>
+            </div>
+            <div class="ai-loop-card">
+              <div class="ai-loop-card-header"><span class="ai-loop-num">04</span><span class="ai-loop-label">Learn</span></div>
+              <h3>Close the loop.</h3>
+              <p>Every transaction feeds back. The next research cycle inherits what worked.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="margin-top: var(--sp-10);">
-        <a href="ai-operations.html" class="btn btn-ghost btn-arrow">Deep dive into AI Operations</a>
+      <!-- ── Agent Fleet Console ── -->
+      <div class="fleet-console">
+        <div class="fleet-console-header">
+          <div class="fleet-console-dots"><span></span><span></span><span></span></div>
+          <span class="fleet-console-title">Inspirelabs · Agent Fleet</span>
+          <span class="fleet-console-status"><span class="fc-live-dot"></span> 7 Active · 25M / mo</span>
+        </div>
+        <table class="fleet-table">
+          <thead>
+            <tr>
+              <th class="ft-col-num"></th>
+              <th class="ft-col-agent">Agent</th>
+              <th class="ft-col-surface">Surface</th>
+              <th class="ft-col-time">Last Action</th>
+              <th class="ft-col-status">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="ft-num">01</td><td class="ft-agent">research-agent</td><td class="ft-surface">GrabOn</td><td class="ft-time">12s ago</td><td class="ft-status"><span class="ft-dot ft-dot--green"></span> Working</td></tr>
+            <tr><td class="ft-num">02</td><td class="ft-agent">seo-rank-agent</td><td class="ft-surface">RankDrive</td><td class="ft-time">4s ago</td><td class="ft-status"><span class="ft-dot ft-dot--green"></span> Indexing</td></tr>
+            <tr><td class="ft-num">03</td><td class="ft-agent">content-ops-agent</td><td class="ft-surface">GrabOn</td><td class="ft-time">28s ago</td><td class="ft-status"><span class="ft-dot ft-dot--green"></span> Generating</td></tr>
+            <tr><td class="ft-num">04</td><td class="ft-agent">campaign-planner</td><td class="ft-surface">Alternatives.co</td><td class="ft-time">1m ago</td><td class="ft-status"><span class="ft-dot ft-dot--amber"></span> Planning</td></tr>
+            <tr><td class="ft-num">05</td><td class="ft-agent">attribution-agent</td><td class="ft-surface">GrabShare</td><td class="ft-time">47s ago</td><td class="ft-status"><span class="ft-dot ft-dot--amber"></span> Matching</td></tr>
+            <tr><td class="ft-num">06</td><td class="ft-agent">reward-orchestrator</td><td class="ft-surface">GrabCash</td><td class="ft-time">2s ago</td><td class="ft-status"><span class="ft-dot ft-dot--amber"></span> Clearing</td></tr>
+            <tr class="ft-row--queued"><td class="ft-num">07</td><td class="ft-agent">credit-underwriter</td><td class="ft-surface">GrabCredit</td><td class="ft-time">—</td><td class="ft-status"><span class="ft-dot ft-dot--queued"></span> Queued · 2027</td></tr>
+          </tbody>
+        </table>
+        <div class="fleet-console-footer">
+          <div class="fleet-console-stats">
+            <div class="fc-stat"><span class="fc-stat-label">Monthly Sessions</span><span class="fc-stat-value">25<span class="fc-stat-unit">M</span></span></div>
+            <div class="fc-stat"><span class="fc-stat-label">Active Merchants</span><span class="fc-stat-value">3.8<span class="fc-stat-unit">K</span></span></div>
+            <div class="fc-stat"><span class="fc-stat-label">Transactions / Yr</span><span class="fc-stat-value">96<span class="fc-stat-unit">M</span></span></div>
+            <div class="fc-stat"><span class="fc-stat-label">Yrs Profitable</span><span class="fc-stat-value">12<span class="fc-stat-unit">+</span></span></div>
+          </div>
+          <span class="fleet-console-geo">India · United States · UAE</span>
+        </div>
+      </div>
+      <!-- Tagline -->
+      <div class="fleet-tagline">
+        <p class="fleet-tagline-marker">● Not chatbots. Workers.</p>
+        <p class="fleet-tagline-body">Each surface above is operated by a small fleet of AI agents that ship the work. Research, ranking, content, planning, attribution, rewards. They run; we own the loop.</p>
+      </div>
+      <div style="margin-top: 40px;">
+        <a href="ai-operations.html" class="btn btn-ghost btn-arrow">Meet the fleet</a>
       </div>
     </div>
   </section>
@@ -1050,7 +1088,7 @@
   // Scroll-triggered reveal for animated sections
   (function() {
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var targets = document.querySelectorAll('.bp-spine, .pillars, .pillars-foundation');
+    var targets = document.querySelectorAll('.bp-spine, .pillars, .pillars-foundation, .ai-layer, .fleet-console');
 
     if (reducedMotion) {
       targets.forEach(function(el) { el.classList.add('in-view'); });
@@ -1067,6 +1105,81 @@
     }, { threshold: 0.2 });
 
     targets.forEach(function(el) { observer.observe(el); });
+  })();
+
+  // Fleet console — live timestamp ticker
+  (function() {
+    var timeEls = document.querySelectorAll('.ft-time');
+    if (!timeEls.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var baseTimes = [];
+    timeEls.forEach(function(el) {
+      var text = el.textContent.trim();
+      if (text === '—') { baseTimes.push(null); return; }
+      var match = text.match(/(\d+)(s|m)/);
+      if (match) {
+        var val = parseInt(match[1]);
+        baseTimes.push(match[2] === 'm' ? val * 60 : val);
+      } else {
+        baseTimes.push(null);
+      }
+    });
+
+    setInterval(function() {
+      baseTimes.forEach(function(t, i) {
+        if (t === null) return;
+        baseTimes[i] = t + 1;
+        var s = baseTimes[i];
+        timeEls[i].textContent = s < 60 ? s + 's ago' : Math.floor(s/60) + 'm ago';
+      });
+    }, 1000);
+  })();
+
+  // Fleet console — stat counter animation
+  (function() {
+    var statEls = document.querySelectorAll('.fc-stat-value');
+    if (!statEls.length) return;
+
+    var targets = [
+      { el: statEls[0], end: 25, decimal: false },
+      { el: statEls[1], end: 3.8, decimal: true },
+      { el: statEls[2], end: 96, decimal: false },
+      { el: statEls[3], end: 12, decimal: false }
+    ];
+
+    var units = [];
+    targets.forEach(function(t) {
+      var unitSpan = t.el.querySelector('.fc-stat-unit');
+      units.push(unitSpan ? unitSpan.outerHTML : '');
+    });
+
+    var counted = false;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          targets.forEach(function(t, i) {
+            var duration = 1200;
+            var startTime = performance.now();
+            function tick(now) {
+              var elapsed = now - startTime;
+              var progress = Math.min(elapsed / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3);
+              var current = t.decimal
+                ? (eased * t.end).toFixed(1)
+                : Math.round(eased * t.end);
+              t.el.innerHTML = current + units[i];
+              if (progress < 1) requestAnimationFrame(tick);
+            }
+            setTimeout(function() { requestAnimationFrame(tick); }, i * 150);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    var footer = document.querySelector('.fleet-console-footer');
+    if (footer) observer.observe(footer);
   })();
 </script>
 </body>

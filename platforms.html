@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=211">
+  <link rel="stylesheet" href="styles.css?v=212">
 </head>
 <body>
 
@@ -161,71 +161,74 @@
   </section>
 
   <!-- ============================================
-       3. PLATFORM DEEP-DIVES
+       3. PLATFORM DEEP-DIVES — Continuous scroll
        ============================================ -->
-  <section class="section">
+  <section class="section" id="platform-deep-dives">
     <div class="container">
       <p class="eyebrow eyebrow--orange">Inside the platforms</p>
       <h2>What each platform does, how it works, and where it fits.</h2>
+    </div>
 
-      <div class="platform-explorer" style="margin-top: var(--sp-10);">
-
-        <!-- Sidebar navigation -->
-        <nav class="platform-sidebar">
-          <a href="#grabon" class="platform-sidebar-item active" data-platform="grabon">
-            <img src="logos/platforms/grabon-logo.svg" alt="GrabOn" class="platform-sidebar-logo">
-            <span class="plat-tag plat-tag--orange" style="font-size: 0.5625rem; padding: 2px 6px;">Flagship</span>
+    <!-- Sticky horizontal tab bar -->
+    <div class="platform-tabbar">
+      <div class="container">
+        <nav class="platform-tabs">
+          <a href="#grabon" class="platform-tab active" data-target="grabon">
+            <img src="logos/platforms/grabon-logo.svg" alt="GrabOn" class="platform-tab-logo">
+            <span class="platform-tab-label">Flagship</span>
           </a>
-          <a href="#grabcash" class="platform-sidebar-item" data-platform="grabcash">
-            <img src="logos/platforms/grabcash-logo.svg" alt="GrabCash" class="platform-sidebar-logo">
+          <a href="#grabcash" class="platform-tab" data-target="grabcash">
+            <img src="logos/platforms/grabcash-logo.svg" alt="GrabCash" class="platform-tab-logo">
           </a>
-          <a href="#grabshare" class="platform-sidebar-item" data-platform="grabshare">
-            <img src="logos/platforms/grabshare-logo.svg" alt="GrabShare" class="platform-sidebar-logo">
+          <a href="#grabshare" class="platform-tab" data-target="grabshare">
+            <img src="logos/platforms/grabshare-logo.svg" alt="GrabShare" class="platform-tab-logo">
           </a>
-          <a href="#alternatives" class="platform-sidebar-item" data-platform="alternatives">
-            <img src="logos/platforms/alternatives-logo.png" alt="Alternatives.co" class="platform-sidebar-logo">
+          <a href="#alternatives" class="platform-tab" data-target="alternatives">
+            <img src="logos/platforms/alternatives-logo.png" alt="Alternatives.co" class="platform-tab-logo">
           </a>
-          <a href="#rankdrive" class="platform-sidebar-item" data-platform="rankdrive">
-            <img src="logos/platforms/rankdrive-logo.png" alt="RankDrive" class="platform-sidebar-logo">
+          <a href="#rankdrive" class="platform-tab" data-target="rankdrive">
+            <img src="logos/platforms/rankdrive-logo.png" alt="RankDrive" class="platform-tab-logo">
           </a>
         </nav>
+      </div>
+    </div>
 
-        <!-- Platform detail panels -->
-        <div class="platform-details">
+    <!-- All platforms — continuous scroll -->
+    <div class="container">
+      <div class="platform-stream">
 
-          <!-- GrabOn -->
-          <article id="grabon" class="platform-detail active">
-            <div class="platform-detail-header">
-              <div class="platform-detail-meta">
-                <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--orange)"/></svg>
-                <span class="plat-tag plat-tag--orange">Flagship</span>
-                <span class="plat-tag plat-tag--muted">Consumer-intent surface</span>
-                <span class="plat-tag plat-tag--muted">Live since 2013</span>
-              </div>
-              <h2 class="platform-detail-name">GrabOn</h2>
+        <!-- ── 01 GrabOn ── -->
+        <article id="grabon" class="platform-block">
+          <div class="platform-block-divider">
+            <span class="platform-block-num">01</span>
+            <span class="platform-block-type">Consumer-intent surface</span>
+            <span class="platform-block-status">Live since 2013</span>
+          </div>
+
+          <div class="platform-block-header">
+            <div class="platform-detail-meta">
+              <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--orange)"/></svg>
+              <span class="plat-tag plat-tag--orange">Flagship</span>
+              <span class="plat-tag plat-tag--muted">Consumer-intent surface</span>
+              <span class="plat-tag plat-tag--muted">Live since 2013</span>
             </div>
+            <h2 class="platform-detail-name">GrabOn</h2>
+          </div>
 
+          <div class="platform-block-hero">
             <div class="platform-detail-screenshot">
               <img src="images/screenshots/grabon.jpg" alt="GrabOn platform">
             </div>
+          </div>
 
-            <p class="platform-detail-desc text-justify">GrabOn captures high-intent savings and commerce behavior across India, global, and UAE properties. It is the primary consumer-intent surface in the Inspirelabs system, generating the intent signals that feed growth platforms, AI workflows, and partner distribution.</p>
-
-            <div class="platform-detail-card">
-              <h3>Capabilities</h3>
-              <ul class="platform-capabilities">
-                <li>Coupon and deal aggregation across 3,800+ brands</li>
-                <li>Category-level commerce discovery (fashion, electronics, food, travel)</li>
-                <li>Store-level savings pages with verified offers</li>
-                <li>Multi-property operation (India, Global, UAE)</li>
-                <li>Mobile apps on Play Store and App Store</li>
-                <li>Brand and merchant partnership network</li>
-              </ul>
+          <!-- Two-column: description + proof -->
+          <div class="platform-block-body">
+            <div class="platform-block-desc">
+              <p class="platform-detail-desc text-justify">GrabOn captures high-intent savings and commerce behavior across India, global, and UAE properties. It is the primary consumer-intent surface in the Inspirelabs system, generating the intent signals that feed growth platforms, AI workflows, and partner distribution.</p>
             </div>
-
-            <div class="platform-detail-card platform-detail-card--light">
+            <div class="platform-block-proof">
               <h3>Proof</h3>
-              <div class="platform-proof-grid">
+              <div class="platform-proof-grid platform-proof-grid--compact">
                 <div class="platform-proof-item">
                   <span class="platform-proof-value">76M+</span>
                   <span class="platform-proof-label">lifetime users</span>
@@ -244,7 +247,21 @@
                 </div>
               </div>
             </div>
+          </div>
 
+          <!-- Two-column: capabilities + ecosystem role -->
+          <div class="platform-block-details">
+            <div class="platform-detail-card">
+              <h3>Capabilities</h3>
+              <ul class="platform-capabilities">
+                <li>Coupon and deal aggregation across 3,800+ brands</li>
+                <li>Category-level commerce discovery (fashion, electronics, food, travel)</li>
+                <li>Store-level savings pages with verified offers</li>
+                <li>Multi-property operation (India, Global, UAE)</li>
+                <li>Mobile apps on Play Store and App Store</li>
+                <li>Brand and merchant partnership network</li>
+              </ul>
+            </div>
             <div class="platform-detail-card platform-detail-card--light">
               <h3>Ecosystem role</h3>
               <div class="platform-role-card">
@@ -252,7 +269,10 @@
                 <p>Consumer intent data, savings behavior signals, brand demand patterns, and high-volume commerce traffic that powers growth platforms and AI workflows.</p>
               </div>
             </div>
+          </div>
 
+          <!-- Properties + CTAs -->
+          <div class="platform-block-footer">
             <div class="platform-detail-card">
               <h3>Properties</h3>
               <div class="property-pills">
@@ -263,30 +283,57 @@
                 <a href="https://apps.apple.com/in/app/grabon-coupons-deals/id6754235104" class="property-pill property-pill--link" target="_blank"><span class="property-pill-dot"></span>Apple App Store</a>
               </div>
             </div>
-
             <div class="platform-detail-ctas">
               <a href="https://www.grabon.in" class="btn btn-ghost btn-arrow" target="_blank">Visit grabon.in</a>
               <a href="growth-engine.html" class="btn btn-ghost btn-arrow">Explore Growth Engine</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- GrabCash -->
-          <article id="grabcash" class="platform-detail">
-            <div class="platform-detail-header">
-              <div class="platform-detail-meta">
-                <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--orange)"/></svg>
-                <span class="plat-tag plat-tag--orange">Affiliate Earnings</span>
-                <span class="plat-tag plat-tag--muted">Growth platform</span>
-              </div>
-              <h2 class="platform-detail-name">GrabCash</h2>
+        <!-- ── 02 GrabCash ── -->
+        <article id="grabcash" class="platform-block">
+          <div class="platform-block-divider">
+            <span class="platform-block-num">02</span>
+            <span class="platform-block-type">Growth platform</span>
+          </div>
+
+          <div class="platform-block-header">
+            <div class="platform-detail-meta">
+              <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--orange)"/></svg>
+              <span class="plat-tag plat-tag--orange">Affiliate Earnings</span>
+              <span class="plat-tag plat-tag--muted">Growth platform</span>
             </div>
+            <h2 class="platform-detail-name">GrabCash</h2>
+          </div>
 
+          <div class="platform-block-hero">
             <div class="platform-detail-screenshot">
               <img src="images/screenshots/grabcash.jpg" alt="GrabCash platform">
             </div>
+          </div>
 
-            <p class="platform-detail-desc text-justify">GrabCash is the performance affiliate layer of the Inspirelabs system. It enables students, homemakers, and everyday creators to share verified deals with their network and earn a real cut. It turns social distribution into measurable growth for brands while giving users an income channel built on trust, not follower counts.</p>
+          <!-- Two-column: description + proof -->
+          <div class="platform-block-body">
+            <div class="platform-block-desc">
+              <p class="platform-detail-desc text-justify">GrabCash is the performance affiliate layer of the Inspirelabs system. It enables students, homemakers, and everyday creators to share verified deals with their network and earn a real cut. It turns social distribution into measurable growth for brands while giving users an income channel built on trust, not follower counts.</p>
+            </div>
+            <div class="platform-block-proof">
+              <h3>Proof</h3>
+              <div class="platform-proof-grid platform-proof-grid--compact">
+                <div class="platform-proof-item">
+                  <span class="platform-proof-value">5,000+</span>
+                  <span class="platform-proof-label">active affiliates</span>
+                </div>
+                <div class="platform-proof-item">
+                  <span class="platform-proof-value">Server-side</span>
+                  <span class="platform-proof-label">attribution model</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Two-column: capabilities + ecosystem role -->
+          <div class="platform-block-details">
             <div class="platform-detail-card">
               <h3>Capabilities</h3>
               <ul class="platform-capabilities">
@@ -298,21 +345,6 @@
                 <li>Performance analytics per link and campaign</li>
               </ul>
             </div>
-
-            <div class="platform-detail-card platform-detail-card--light">
-              <h3>Proof</h3>
-              <div class="platform-proof-grid">
-                <div class="platform-proof-item">
-                  <span class="platform-proof-value">5,000+</span>
-                  <span class="platform-proof-label">active affiliates</span>
-                </div>
-                <div class="platform-proof-item">
-                  <span class="platform-proof-value">Server-side</span>
-                  <span class="platform-proof-label">attribution model</span>
-                </div>
-              </div>
-            </div>
-
             <div class="platform-detail-card platform-detail-card--light">
               <h3>Ecosystem role</h3>
               <div class="platform-role-card">
@@ -320,31 +352,49 @@
                 <p>Distributed social commerce signals, affiliate conversion data, and real-world demand validation that helps brands understand which offers drive action beyond the platform.</p>
               </div>
             </div>
+          </div>
 
+          <!-- CTAs -->
+          <div class="platform-block-footer">
             <div class="platform-detail-ctas">
               <a href="https://www.grabcash.in" class="btn btn-ghost btn-arrow" target="_blank">Visit grabcash.in</a>
               <a href="https://play.google.com/store/apps/details?id=com.inspirelabs.grabcash" class="btn btn-ghost btn-arrow" target="_blank">Google Play Store</a>
               <a href="https://apps.apple.com/in/app/grabcash-affiliate-marketing/id6753916261" class="btn btn-ghost btn-arrow" target="_blank">Apple App Store</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- GrabShare -->
-          <article id="grabshare" class="platform-detail">
-            <div class="platform-detail-header">
-              <div class="platform-detail-meta">
-                <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--ink)"/></svg>
-                <span class="plat-tag">Creator layer</span>
-                <span class="plat-tag plat-tag--muted">Growth platform</span>
-              </div>
-              <h2 class="platform-detail-name">GrabShare</h2>
+        <!-- ── 03 GrabShare ── -->
+        <article id="grabshare" class="platform-block">
+          <div class="platform-block-divider">
+            <span class="platform-block-num">03</span>
+            <span class="platform-block-type">Growth platform</span>
+          </div>
+
+          <div class="platform-block-header">
+            <div class="platform-detail-meta">
+              <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--ink)"/></svg>
+              <span class="plat-tag">Creator layer</span>
+              <span class="plat-tag plat-tag--muted">Growth platform</span>
             </div>
+            <h2 class="platform-detail-name">GrabShare</h2>
+          </div>
 
+          <div class="platform-block-hero">
             <div class="platform-detail-screenshot">
               <img src="images/screenshots/grabshare.jpg" alt="GrabShare platform">
             </div>
+          </div>
 
-            <p class="platform-detail-desc text-justify">GrabShare is a creator-led storefront where verified voices curate the products they actually use. It connects social commerce with the way people actually discover and buy, turning trusted recommendations into measurable brand growth through revenue-share mechanics.</p>
+          <!-- Description only (no proof) -->
+          <div class="platform-block-body platform-block-body--full">
+            <div class="platform-block-desc">
+              <p class="platform-detail-desc text-justify">GrabShare is a creator-led storefront where verified voices curate the products they actually use. It connects social commerce with the way people actually discover and buy, turning trusted recommendations into measurable brand growth through revenue-share mechanics.</p>
+            </div>
+          </div>
 
+          <!-- Two-column: capabilities + ecosystem role -->
+          <div class="platform-block-details">
             <div class="platform-detail-card">
               <h3>Capabilities</h3>
               <ul class="platform-capabilities">
@@ -356,7 +406,6 @@
                 <li>Mobile-first experience designed for social sharing</li>
               </ul>
             </div>
-
             <div class="platform-detail-card platform-detail-card--light">
               <h3>Ecosystem role</h3>
               <div class="platform-role-card">
@@ -364,44 +413,46 @@
                 <p>Creator-led purchase signals, social proof data, and authentic product recommendations that complement the intent captured by consumer surfaces.</p>
               </div>
             </div>
+          </div>
 
+          <!-- CTAs -->
+          <div class="platform-block-footer">
             <div class="platform-detail-ctas">
               <a href="https://grabshare.in" class="btn btn-ghost btn-arrow" target="_blank">Visit grabshare.in</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- Alternatives.co -->
-          <article id="alternatives" class="platform-detail">
-            <div class="platform-detail-header">
-              <div class="platform-detail-meta">
-                <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--ink)"/></svg>
-                <span class="plat-tag">B2B Discovery</span>
-                <span class="plat-tag plat-tag--muted">Consumer-intent surface</span>
-              </div>
-              <h2 class="platform-detail-name">Alternatives.co</h2>
+        <!-- ── 04 Alternatives.co ── -->
+        <article id="alternatives" class="platform-block">
+          <div class="platform-block-divider">
+            <span class="platform-block-num">04</span>
+            <span class="platform-block-type">Consumer-intent surface</span>
+          </div>
+
+          <div class="platform-block-header">
+            <div class="platform-detail-meta">
+              <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--ink)"/></svg>
+              <span class="plat-tag">B2B Discovery</span>
+              <span class="plat-tag plat-tag--muted">Consumer-intent surface</span>
             </div>
+            <h2 class="platform-detail-name">Alternatives.co</h2>
+          </div>
 
+          <div class="platform-block-hero">
             <div class="platform-detail-screenshot">
               <img src="images/screenshots/alternatives.jpg" alt="Alternatives.co platform">
             </div>
+          </div>
 
-            <p class="platform-detail-desc text-justify">Alternatives.co is a consumer-intent surface for software discovery. It captures comparison and evaluation behavior from users researching tools, platforms, and business software. It serves a growing segment of high-intent decision-makers looking for the right product for their needs.</p>
-
-            <div class="platform-detail-card">
-              <h3>Capabilities</h3>
-              <ul class="platform-capabilities">
-                <li>Software product profiles with features, pricing, and reviews</li>
-                <li>Side-by-side product comparison tools</li>
-                <li>Category-level software discovery across all verticals</li>
-                <li>Alternative recommendations based on user needs</li>
-                <li>Verified user reviews and ratings</li>
-                <li>GPT-powered search for software recommendations</li>
-              </ul>
+          <!-- Two-column: description + proof -->
+          <div class="platform-block-body">
+            <div class="platform-block-desc">
+              <p class="platform-detail-desc text-justify">Alternatives.co is a consumer-intent surface for software discovery. It captures comparison and evaluation behavior from users researching tools, platforms, and business software. It serves a growing segment of high-intent decision-makers looking for the right product for their needs.</p>
             </div>
-
-            <div class="platform-detail-card platform-detail-card--light">
+            <div class="platform-block-proof">
               <h3>Proof</h3>
-              <div class="platform-proof-grid">
+              <div class="platform-proof-grid platform-proof-grid--compact">
                 <div class="platform-proof-item">
                   <span class="platform-proof-value">1,100+</span>
                   <span class="platform-proof-label">software profiles</span>
@@ -416,7 +467,21 @@
                 </div>
               </div>
             </div>
+          </div>
 
+          <!-- Two-column: capabilities + ecosystem role -->
+          <div class="platform-block-details">
+            <div class="platform-detail-card">
+              <h3>Capabilities</h3>
+              <ul class="platform-capabilities">
+                <li>Software product profiles with features, pricing, and reviews</li>
+                <li>Side-by-side product comparison tools</li>
+                <li>Category-level software discovery across all verticals</li>
+                <li>Alternative recommendations based on user needs</li>
+                <li>Verified user reviews and ratings</li>
+                <li>GPT-powered search for software recommendations</li>
+              </ul>
+            </div>
             <div class="platform-detail-card platform-detail-card--light">
               <h3>Ecosystem role</h3>
               <div class="platform-role-card">
@@ -424,29 +489,47 @@
                 <p>B2B evaluation intent, software comparison behavior, and high-intent buyer signals from users actively researching purchase decisions.</p>
               </div>
             </div>
+          </div>
 
+          <!-- CTAs -->
+          <div class="platform-block-footer">
             <div class="platform-detail-ctas">
               <a href="https://www.alternatives.co" class="btn btn-ghost btn-arrow" target="_blank">Visit alternatives.co</a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- RankDrive -->
-          <article id="rankdrive" class="platform-detail">
-            <div class="platform-detail-header">
-              <div class="platform-detail-meta">
-                <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--soft-grey)"/></svg>
-                <span class="plat-tag">Intelligence</span>
-                <span class="plat-tag plat-tag--muted">Supporting platform</span>
-              </div>
-              <h2 class="platform-detail-name">RankDrive</h2>
+        <!-- ── 05 RankDrive ── -->
+        <article id="rankdrive" class="platform-block">
+          <div class="platform-block-divider">
+            <span class="platform-block-num">05</span>
+            <span class="platform-block-type">Supporting platform</span>
+          </div>
+
+          <div class="platform-block-header">
+            <div class="platform-detail-meta">
+              <svg width="10" height="10" viewBox="0 0 10 10"><rect width="10" height="10" rx="2" fill="var(--soft-grey)"/></svg>
+              <span class="plat-tag">Intelligence</span>
+              <span class="plat-tag plat-tag--muted">Supporting platform</span>
             </div>
+            <h2 class="platform-detail-name">RankDrive</h2>
+          </div>
 
+          <div class="platform-block-hero">
             <div class="platform-detail-screenshot">
               <img src="images/platforms/rankdrive-dashboard.png" alt="RankDrive dashboard showing rank tracking, Google Analytics, and search console metrics">
             </div>
+          </div>
 
-            <p class="platform-detail-desc text-justify">RankDrive is the search-revenue operating layer for growth teams. It maps keywords to revenue, not just rankings, and provides the intelligence backbone that helps Inspirelabs platforms understand where search visibility creates real business outcomes.</p>
+          <!-- Description only (no proof) -->
+          <div class="platform-block-body platform-block-body--full">
+            <div class="platform-block-desc">
+              <p class="platform-detail-desc text-justify">RankDrive is the search-revenue operating layer for growth teams. It maps keywords to revenue, not just rankings, and provides the intelligence backbone that helps Inspirelabs platforms understand where search visibility creates real business outcomes.</p>
+            </div>
+          </div>
 
+          <!-- Two-column: capabilities + ecosystem role -->
+          <div class="platform-block-details">
             <div class="platform-detail-card">
               <h3>Capabilities</h3>
               <ul class="platform-capabilities">
@@ -458,7 +541,6 @@
                 <li>Cross-platform search intelligence reporting</li>
               </ul>
             </div>
-
             <div class="platform-detail-card platform-detail-card--light">
               <h3>Ecosystem role</h3>
               <div class="platform-role-card">
@@ -466,10 +548,9 @@
                 <p>Search intelligence, keyword-revenue correlation data, and competitive positioning insights that inform content strategy and growth decisions across every surface.</p>
               </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-
-        </div>
       </div>
     </div>
   </section>
@@ -590,54 +671,80 @@
     </div>
   </footer>
 
-  <!-- Platform sidebar: show/hide on click -->
+  <!-- Platform stream: scroll tracking + tab navigation -->
   <script>
     (function() {
-      var sidebar = document.querySelector('.platform-sidebar');
-      if (!sidebar) return;
-      var items = sidebar.querySelectorAll('.platform-sidebar-item');
-      var details = document.querySelectorAll('.platform-detail');
+      var tabs = document.querySelectorAll('.platform-tab');
+      var blocks = document.querySelectorAll('.platform-block');
+      if (!tabs.length || !blocks.length) return;
 
-      // Show first platform by default
-      if (details.length > 0) details[0].classList.add('active');
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var navHeight = 64;
+      var tabbarHeight = 56;
+      var scrollOffset = navHeight + tabbarHeight + 16;
 
-      function showPlatform(platformId) {
-        // Hide all details
-        details.forEach(function(d) { d.classList.remove('active'); });
-        // Deactivate all sidebar items
-        items.forEach(function(i) { i.classList.remove('active'); });
+      // ---- Scroll-triggered reveal animations ----
+      if (reducedMotion) {
+        blocks.forEach(function(b) { b.classList.add('in-view'); });
+      } else {
+        var revealObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
 
-        // Show selected detail
-        var target = document.getElementById(platformId);
-        if (target) target.classList.add('active');
-
-        // Activate matching sidebar item
-        var matchingItem = sidebar.querySelector('[data-platform="' + platformId + '"]');
-        if (matchingItem) matchingItem.classList.add('active');
+        blocks.forEach(function(b) { revealObserver.observe(b); });
       }
 
-      // Sidebar click handler
-      items.forEach(function(item) {
-        item.addEventListener('click', function(e) {
-          e.preventDefault();
-          var platformId = this.getAttribute('data-platform');
-          showPlatform(platformId);
+      // ---- Active tab tracking on scroll ----
+      var activeTab = tabs[0];
 
-          // Scroll the explorer section into view
-          var explorer = document.querySelector('.platform-explorer');
-          if (explorer) {
-            var headerHeight = 64;
-            var top = explorer.getBoundingClientRect().top + window.scrollY - headerHeight;
-            window.scrollTo({ top: top, behavior: 'smooth' });
+      function updateActiveTab(targetId) {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        var match = document.querySelector('.platform-tab[data-target="' + targetId + '"]');
+        if (match) {
+          match.classList.add('active');
+          activeTab = match;
+        }
+      }
+
+      var tabObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            updateActiveTab(entry.target.id);
           }
+        });
+      }, {
+        rootMargin: '-' + scrollOffset + 'px 0px -50% 0px',
+        threshold: 0
+      });
+
+      blocks.forEach(function(b) { tabObserver.observe(b); });
+
+      // ---- Tab click: smooth scroll to platform ----
+      function scrollToPlatform(targetId) {
+        var target = document.getElementById(targetId);
+        if (!target) return;
+        var top = target.getBoundingClientRect().top + window.scrollY - scrollOffset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          var targetId = this.getAttribute('data-target');
+          scrollToPlatform(targetId);
         });
       });
 
-      // Handle hash links (from system layers tags)
+      // ---- Handle hash links from other pages ----
       function handleHash() {
         var hash = window.location.hash.replace('#', '');
         if (hash && document.getElementById(hash)) {
-          showPlatform(hash);
+          setTimeout(function() { scrollToPlatform(hash); }, 100);
         }
       }
       window.addEventListener('hashchange', handleHash);

@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=212">
+  <link rel="stylesheet" href="styles.css?v=214">
 </head>
 <body>
 
@@ -671,72 +671,68 @@
     </div>
   </footer>
 
-  <!-- Platform stream: scroll tracking + tab navigation -->
+  <!-- Platform tabs: show/hide + auto-advance -->
   <script>
     (function() {
       var tabs = document.querySelectorAll('.platform-tab');
       var blocks = document.querySelectorAll('.platform-block');
       if (!tabs.length || !blocks.length) return;
 
-      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var navHeight = 64;
-      var tabbarHeight = 56;
-      var scrollOffset = navHeight + tabbarHeight + 16;
+      var platformIds = [];
+      blocks.forEach(function(b) { platformIds.push(b.id); });
 
-      // ---- Scroll-triggered reveal animations ----
-      if (reducedMotion) {
-        blocks.forEach(function(b) { b.classList.add('in-view'); });
-      } else {
-        var revealObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 });
+      var currentIndex = 0;
+      var autoTimer = null;
+      var autoDelay = 8000; // 8 seconds per platform
 
-        blocks.forEach(function(b) { revealObserver.observe(b); });
-      }
+      // ---- Show a platform by ID ----
+      function showPlatform(targetId, scrollToSection) {
+        // Update blocks
+        blocks.forEach(function(b) { b.classList.remove('active'); });
+        var target = document.getElementById(targetId);
+        if (target) target.classList.add('active');
 
-      // ---- Active tab tracking on scroll ----
-      var activeTab = tabs[0];
-
-      function updateActiveTab(targetId) {
+        // Update tabs
         tabs.forEach(function(t) { t.classList.remove('active'); });
-        var match = document.querySelector('.platform-tab[data-target="' + targetId + '"]');
-        if (match) {
-          match.classList.add('active');
-          activeTab = match;
+        var matchTab = document.querySelector('.platform-tab[data-target="' + targetId + '"]');
+        if (matchTab) matchTab.classList.add('active');
+
+        // Update index
+        currentIndex = platformIds.indexOf(targetId);
+        if (currentIndex === -1) currentIndex = 0;
+
+        // Scroll the section into view if requested
+        if (scrollToSection) {
+          var tabbar = document.querySelector('.platform-tabbar');
+          if (tabbar) {
+            var headerHeight = 64;
+            var top = tabbar.getBoundingClientRect().top + window.scrollY - headerHeight;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
         }
       }
 
-      var tabObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            updateActiveTab(entry.target.id);
-          }
-        });
-      }, {
-        rootMargin: '-' + scrollOffset + 'px 0px -50% 0px',
-        threshold: 0
-      });
-
-      blocks.forEach(function(b) { tabObserver.observe(b); });
-
-      // ---- Tab click: smooth scroll to platform ----
-      function scrollToPlatform(targetId) {
-        var target = document.getElementById(targetId);
-        if (!target) return;
-        var top = target.getBoundingClientRect().top + window.scrollY - scrollOffset;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+      // ---- Auto-advance to next platform ----
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(function() {
+          var nextIndex = (currentIndex + 1) % platformIds.length;
+          showPlatform(platformIds[nextIndex], false);
+        }, autoDelay);
       }
 
+      function stopAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      }
+
+      // ---- Tab click handler ----
       tabs.forEach(function(tab) {
         tab.addEventListener('click', function(e) {
           e.preventDefault();
           var targetId = this.getAttribute('data-target');
-          scrollToPlatform(targetId);
+          showPlatform(targetId, false);
+          // Reset auto-advance timer on manual interaction
+          startAuto();
         });
       });
 
@@ -744,11 +740,29 @@
       function handleHash() {
         var hash = window.location.hash.replace('#', '');
         if (hash && document.getElementById(hash)) {
-          setTimeout(function() { scrollToPlatform(hash); }, 100);
+          showPlatform(hash, true);
+          startAuto();
         }
       }
+
+      // ---- Initialize ----
+      if (window.location.hash) {
+        handleHash();
+      } else {
+        showPlatform(platformIds[0], false);
+      }
+
       window.addEventListener('hashchange', handleHash);
-      if (window.location.hash) handleHash();
+
+      // Start auto-advance
+      startAuto();
+
+      // Pause auto-advance when user hovers over the platform stream
+      var stream = document.querySelector('.platform-stream');
+      if (stream) {
+        stream.addEventListener('mouseenter', stopAuto);
+        stream.addEventListener('mouseleave', startAuto);
+      }
     })();
   </script>
 

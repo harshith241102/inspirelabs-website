@@ -2866,14 +2866,21 @@ a.portfolio-card:hover .portfolio-arrow {
   margin-top: 0;
 }
 
-/* Individual platform block */
+/* Individual platform block — one visible at a time */
 .platform-block {
-  padding: 64px 0 48px;
-  border-bottom: 1px solid var(--grey-100);
+  display: none;
+  flex-direction: column;
+  padding: 48px 0 32px;
 }
 
-.platform-block:last-child {
-  border-bottom: none;
+.platform-block.active {
+  display: flex;
+  animation: platformBlockFadeIn 0.4s ease both;
+}
+
+@keyframes platformBlockFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Divider / number marker */
@@ -2968,20 +2975,12 @@ a.portfolio-card:hover .portfolio-arrow {
   margin-bottom: 24px;
 }
 
-/* ---- Scroll-triggered reveal animations ---- */
-.platform-block-hero,
-.platform-block-body,
-.platform-block-details,
-.platform-block-footer {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+/* Reduced-motion: skip animations */
+@media (prefers-reduced-motion: reduce) {
+  .platform-block.active {
+    animation: none;
+  }
 }
-
-.platform-block.in-view .platform-block-hero    { opacity: 1; transform: none; transition-delay: 0s; }
-.platform-block.in-view .platform-block-body     { opacity: 1; transform: none; transition-delay: 0.12s; }
-.platform-block.in-view .platform-block-details  { opacity: 1; transform: none; transition-delay: 0.24s; }
-.platform-block.in-view .platform-block-footer   { opacity: 1; transform: none; transition-delay: 0.36s; }
 
 .platform-detail-header {
   display: flex;

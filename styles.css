@@ -767,6 +767,8 @@ a.portfolio-card:hover {
   object-fit: contain;
   object-position: left center;
 }
+.portfolio-logo[alt="GrabCash"]  { height: 26px; }
+.portfolio-logo[alt="GrabShare"] { height: 26px; }
 
 .portfolio-meta {
   font-family: var(--font-mono);
@@ -2410,6 +2412,15 @@ a.portfolio-card:hover .portfolio-arrow {
   max-width: 200px;
 }
 
+/* ============================================
+   LOGO SIZE NORMALIZATION
+   GrabOn = reference. GrabCash and GrabShare
+   have wider aspect ratios; reduce height so
+   wordmark x-heights match visually.
+   ============================================ */
+.plat-logo[alt="GrabCash"]  { height: 24px; }
+.plat-logo[alt="GrabShare"] { height: 24px; }
+
 .plat-desc {
   font-size: 0.875rem;
   line-height: 1.6;
@@ -2850,6 +2861,9 @@ a.portfolio-card:hover .portfolio-arrow {
   opacity: 0.45;
   transition: opacity var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
 }
+
+.platform-sidebar-logo[alt="GrabCash"]  { height: 22px; }
+.platform-sidebar-logo[alt="GrabShare"] { height: 22px; }
 
 .platform-sidebar-item:hover .platform-sidebar-logo {
   transform: scale(1.04);
@@ -9964,6 +9978,7 @@ tr:nth-child(6) .ft-dot--amber { animation-delay: 1.5s; }
 .pr-platform-logo[alt="GrabCash"] {
   height: 26px;
 }
+.pr-platform-logo[alt="GrabShare"] { height: 30px; }
 
 .pr-platform-name {
   display: none;

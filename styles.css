@@ -2883,42 +2883,6 @@ a.portfolio-card:hover .portfolio-arrow {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Divider / number marker */
-.platform-block-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.platform-block-num {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--orange);
-}
-
-.platform-block-type,
-.platform-block-status {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--soft-grey);
-}
-
-.platform-block-type::before {
-  content: '\00B7';
-  margin-right: 12px;
-  color: var(--grey-200);
-}
-
-.platform-block-status::before {
-  content: '\00B7';
-  margin-right: 12px;
-  color: var(--grey-200);
-}
-
 /* Header (name + tags) */
 .platform-block-header {
   margin-bottom: 32px;

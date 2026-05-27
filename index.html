@@ -45,16 +45,17 @@
     <div class="container grid-12">
       <div class="hero-content">
         <p class="eyebrow eyebrow--orange">AI-driven performance marketing system</p>
-        <h1>Your campaigns end. Your system shouldn't.</h1>
-        <p class="hero-subcopy">Every quarter, brands restart: new agency, new campaign, new dashboard. The learning resets, the spend compounds, and growth stays flat. Inspirelabs is the system that breaks that cycle.</p>
+        <h1>Your next agency is a fleet of AI agents.</h1>
+        <p class="hero-subcopy">For 12+ years, brands rented agencies and reset every quarter. Inspirelabs runs a fleet of AI agents across seven consumer surfaces, researching demand, ranking search, generating content, planning campaigns, attributing revenue, clearing rewards. The learning compounds. The system runs. Operators steer.</p>
+        <p class="hero-identity-badge">Bootstrapped · Profitable · Agent-native</p>
         <div class="hero-ctas">
           <a href="contact.html#partner" class="btn btn-hero-primary btn-arrow">Partner with us</a>
           <a href="#how-it-works" class="btn btn-hero-outline btn-arrow">See how it works</a>
         </div>
         <div class="hero-proof">
           <div class="proof-capsule">
-            <span class="proof-value">12+</span>
-            <span class="proof-label">years building</span>
+            <span class="proof-value">$4.8B</span>
+            <span class="proof-label">GMV influenced</span>
           </div>
           <div class="proof-capsule">
             <span class="proof-value">76M+</span>
@@ -85,11 +86,36 @@
           <div class="orbit-core">
             <img src="logos/symbol-light.png" alt="Inspirelabs Grid" class="orbit-symbol-img">
           </div>
-          <div class="orbit-labels">
-            <span class="orbit-label orbit-label--top">Consumer surfaces</span>
-            <span class="orbit-label orbit-label--right">Growth platforms</span>
-            <span class="orbit-label orbit-label--bottom">AI workflows</span>
-            <span class="orbit-label orbit-label--left">Operators</span>
+          <!-- Fleet capsules — positioned around orbit -->
+          <div class="fleet-capsules">
+            <div class="fleet-capsule fleet-capsule--1">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+              <span class="fleet-capsule-label">Demand</span>
+            </div>
+            <div class="fleet-capsule fleet-capsule--2">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+              <span class="fleet-capsule-label">Search</span>
+            </div>
+            <div class="fleet-capsule fleet-capsule--3">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+              <span class="fleet-capsule-label">Content</span>
+            </div>
+            <div class="fleet-capsule fleet-capsule--4">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="12 6 14 10 18 10.5 15 13.5 16 18 12 15.5 8 18 9 13.5 6 10.5 10 10 12 6"/></svg></span>
+              <span class="fleet-capsule-label">Campaigns</span>
+            </div>
+            <div class="fleet-capsule fleet-capsule--5">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+              <span class="fleet-capsule-label">Revenue</span>
+            </div>
+            <div class="fleet-capsule fleet-capsule--6">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+              <span class="fleet-capsule-label">Rewards</span>
+            </div>
+            <div class="fleet-capsule fleet-capsule--7">
+              <span class="fleet-capsule-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></span>
+              <span class="fleet-capsule-label">Insights</span>
+            </div>
           </div>
           <div class="orbit-pulse orbit-pulse--1"></div>
           <div class="orbit-pulse orbit-pulse--2"></div>
@@ -1002,6 +1028,25 @@
   </footer>
 
 <script>
+  // Mobile nav toggle
+  (function() {
+    var hamburger = document.querySelector('.hamburger');
+    var nav = document.querySelector('.header-nav');
+    if (!hamburger || !nav) return;
+    hamburger.addEventListener('click', function() {
+      var open = nav.classList.toggle('nav-open');
+      hamburger.classList.toggle('hamburger--active', open);
+      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('nav-open');
+        hamburger.classList.remove('hamburger--active');
+        hamburger.setAttribute('aria-label', 'Open menu');
+      });
+    });
+  })();
+
   // Scroll-triggered reveal for animated sections
   (function() {
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

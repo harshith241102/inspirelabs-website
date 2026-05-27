@@ -476,6 +476,23 @@ p {
   height: 44px;
   align-items: center;
   justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+}
+
+.hamburger--active svg line:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.hamburger--active svg line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger--active svg line:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: center;
 }
 
 /* ============================================
@@ -555,6 +572,16 @@ p {
   margin-top: var(--sp-6);
   max-width: 560px;
   text-align: justify;
+}
+
+.hero-identity-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: var(--sp-6);
+  font-weight: 500;
 }
 
 .hero-ctas {
@@ -1558,6 +1585,132 @@ a.portfolio-card:hover .portfolio-arrow {
 .orbit-label--right { right: -16px; top: 50%; transform: translateY(-50%) translateX(100%); }
 .orbit-label--bottom { bottom: -24px; left: 50%; transform: translateX(-50%); }
 .orbit-label--left { left: -16px; top: 50%; transform: translateY(-50%) translateX(-100%); }
+
+/* Fleet capsules — positioned around orbit */
+.fleet-capsules {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.fleet-capsule {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--soft-grey);
+  border: 1px solid var(--grey-200);
+  border-radius: 100px;
+  padding: 5px 12px;
+  background: var(--paper);
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  animation: fleet-glow 8.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.fleet-capsule:hover {
+  border-color: var(--orange);
+  color: var(--ink);
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 0 12px rgba(255, 122, 69, 0.3);
+}
+
+/* Sequential glow — each capsule lights up in turn.
+   8.4s total ÷ 7 capsules = 1.2s per slot.
+   Each glow: ~0.4s fade in, ~0.4s hold, ~0.4s fade out. */
+@keyframes fleet-glow {
+  0% {
+    border-color: var(--grey-200);
+    box-shadow: 0 0 0 rgba(255, 122, 69, 0);
+    color: var(--soft-grey);
+  }
+  5% {
+    border-color: var(--orange);
+    box-shadow: 0 0 12px rgba(255, 122, 69, 0.25);
+    color: var(--ink);
+  }
+  9% {
+    border-color: var(--orange);
+    box-shadow: 0 0 12px rgba(255, 122, 69, 0.25);
+    color: var(--ink);
+  }
+  14% {
+    border-color: var(--grey-200);
+    box-shadow: 0 0 0 rgba(255, 122, 69, 0);
+    color: var(--soft-grey);
+  }
+  100% {
+    border-color: var(--grey-200);
+    box-shadow: 0 0 0 rgba(255, 122, 69, 0);
+    color: var(--soft-grey);
+  }
+}
+
+.fleet-capsule--1 { animation-delay: 0s; }
+.fleet-capsule--2 { animation-delay: 1.2s; }
+.fleet-capsule--3 { animation-delay: 2.4s; }
+.fleet-capsule--4 { animation-delay: 3.6s; }
+.fleet-capsule--5 { animation-delay: 4.8s; }
+.fleet-capsule--6 { animation-delay: 6.0s; }
+.fleet-capsule--7 { animation-delay: 7.2s; }
+
+.fleet-capsule-icon {
+  font-size: 0.65rem;
+  color: var(--orange);
+  flex-shrink: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---- Fleet capsule circular positioning ----
+   7 capsules, equally spaced = 360° / 7 ≈ 51.43° apart.
+   Starting angle: -90° (capsule 1 at 12 o'clock).
+   52% radius places capsules just on the outermost ring edge. */
+
+.fleet-capsule {
+  transform: translate(-50%, -50%);
+}
+
+.fleet-capsule--1 {
+  left: calc(50% + 52% * cos(-90deg));
+  top:  calc(50% + 52% * sin(-90deg));
+}
+
+.fleet-capsule--2 {
+  left: calc(50% + 52% * cos(-38.57deg));
+  top:  calc(50% + 52% * sin(-38.57deg));
+}
+
+.fleet-capsule--3 {
+  left: calc(50% + 52% * cos(12.86deg));
+  top:  calc(50% + 52% * sin(12.86deg));
+}
+
+.fleet-capsule--4 {
+  left: calc(50% + 52% * cos(64.29deg));
+  top:  calc(50% + 52% * sin(64.29deg));
+}
+
+.fleet-capsule--5 {
+  left: calc(50% + 52% * cos(115.71deg));
+  top:  calc(50% + 52% * sin(115.71deg));
+}
+
+.fleet-capsule--6 {
+  left: calc(50% + 52% * cos(167.14deg));
+  top:  calc(50% + 52% * sin(167.14deg));
+}
+
+.fleet-capsule--7 {
+  left: calc(50% + 52% * cos(218.57deg));
+  top:  calc(50% + 52% * sin(218.57deg));
+}
 
 .orbit-pulse {
   position: absolute;
@@ -7681,6 +7834,27 @@ a.portfolio-card:hover .portfolio-arrow {
 
   .header-nav {
     display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-6);
+  }
+
+  .header-nav.nav-open {
+    display: flex;
+  }
+
+  .header-nav.nav-open a {
+    font-size: 1.25rem;
+    padding: var(--sp-2) var(--sp-4);
+  }
+
+  .header-nav.nav-open .nav-cta {
+    margin-top: var(--sp-4);
   }
 
   .header-cta {
@@ -7823,10 +7997,46 @@ a.portfolio-card:hover .portfolio-arrow {
   .hero-proof {
     grid-template-columns: 1fr 1fr;
     gap: var(--sp-2);
+    justify-content: center;
   }
 
+  /* On mobile, reflow fleet capsules into a wrapped row beneath the orbit */
   .system-orbit {
     max-width: 280px;
+    margin-bottom: 100px;
+  }
+
+  .fleet-capsules {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 320px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--sp-3);
+    pointer-events: auto;
+  }
+
+  .fleet-capsule {
+    position: static;
+    transform: none;
+    font-size: 0.625rem;
+    padding: 4px 8px;
+    gap: 4px;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+
+  .fleet-capsule-icon svg {
+    width: 10px;
+    height: 10px;
   }
 
   .ge-return-path,
